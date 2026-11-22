@@ -1,0 +1,1645 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>花都影视 - 在线观看平台_免费高清影视内容社区</title>
+<meta name="description" content="花都影视为花都影视官方网站，提供免费高清在线观看服务，聚合原创影视内容与创作者社区，打造值得信赖的品质影视平台。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313121a'/%3E%3Cpath d='M24 18 L48 32 L24 46 Z' fill='%23ff5a3c'/%3E%3Ccircle cx='16' cy='20' r='3' fill='%23ffd166'/%3E%3Ccircle cx='16' cy='44' r='3' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+:root{
+  --hd-bg:#0f0e14;
+  --hd-bg-soft:#17161f;
+  --hd-card:#1c1b26;
+  --hd-card-2:#232231;
+  --hd-line:#2e2c3d;
+  --hd-text:#ecebf3;
+  --hd-muted:#a3a0b8;
+  --hd-accent:#ff5a3c;
+  --hd-accent-2:#ffd166;
+  --hd-radius:16px;
+  --hd-radius-sm:10px;
+  --hd-sticky:118px;
+  --hd-max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--hd-sticky)}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+  background:var(--hd-bg);
+  color:var(--hd-text);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input{font-family:inherit}
+.hd-container{max-width:var(--hd-max);margin:0 auto;padding:0 22px}
+
+/* ============ Announcement + Header sticky ============ */
+.hd-top-stack{
+  position:sticky;top:0;z-index:120;
+}
+.hd-announce{
+  background:linear-gradient(90deg,#2a1230,#3a1820 45%,#231a10);
+  border-bottom:1px solid #4a2a30;
+  font-size:13.5px;
+  color:#ffd9c2;
+}
+.hd-announce-inner{
+  display:flex;align-items:center;gap:12px;
+  padding:8px 22px;max-width:var(--hd-max);margin:0 auto;
+  overflow:hidden;
+}
+.hd-announce-badge{
+  flex:0 0 auto;background:var(--hd-accent);color:#1a0c08;
+  font-weight:700;font-size:11.5px;letter-spacing:.5px;
+  padding:2px 9px;border-radius:20px;
+}
+.hd-announce-track{display:flex;gap:34px;white-space:nowrap;overflow:hidden;flex:1}
+.hd-announce-track span{display:inline-flex;align-items:center;gap:7px}
+.hd-announce-track i{
+  width:6px;height:6px;border-radius:50%;background:var(--hd-accent-2);
+  display:inline-block;font-style:normal;flex:0 0 auto;
+}
+.hd-header{
+  background:rgba(15,14,20,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--hd-line);
+}
+.hd-nav-wrap{
+  display:flex;align-items:center;gap:22px;
+  padding:13px 22px;max-width:var(--hd-max);margin:0 auto;
+}
+.hd-brand{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+.hd-brand-mark{
+  width:42px;height:42px;border-radius:12px;flex:0 0 auto;
+  background:linear-gradient(140deg,var(--hd-accent),#ff8a3c 55%,var(--hd-accent-2));
+  display:grid;place-items:center;
+  box-shadow:0 6px 18px -6px rgba(255,90,60,.7);
+}
+.hd-brand-mark svg{width:22px;height:22px}
+.hd-brand-text b{display:block;font-size:18px;letter-spacing:.5px;line-height:1.2}
+.hd-brand-text small{display:block;font-size:11px;color:var(--hd-muted);letter-spacing:2px;text-transform:uppercase}
+.hd-nav{display:flex;gap:4px;flex:1;min-width:0;flex-wrap:wrap}
+.hd-nav a{
+  font-size:14.5px;color:var(--hd-muted);padding:7px 11px;border-radius:8px;
+  transition:.2s;white-space:nowrap;
+}
+.hd-nav a:hover{color:var(--hd-text);background:var(--hd-card-2)}
+.hd-search{
+  display:flex;align-items:center;gap:0;flex:0 1 240px;min-width:0;
+  background:var(--hd-card);border:1px solid var(--hd-line);border-radius:10px;
+  overflow:hidden;
+}
+.hd-search input{
+  flex:1;min-width:0;background:transparent;border:none;outline:none;
+  color:var(--hd-text);font-size:13.5px;padding:9px 12px;
+}
+.hd-search input::placeholder{color:#706d84}
+.hd-search button{
+  padding:9px 13px;color:var(--hd-accent);font-size:14px;font-weight:600;
+  transition:.2s;
+}
+.hd-search button:hover{background:var(--hd-card-2)}
+.hd-burger{
+  display:none;flex:0 0 auto;width:40px;height:40px;border-radius:10px;
+  border:1px solid var(--hd-line);color:var(--hd-text);
+  font-size:19px;align-items:center;justify-content:center;
+}
+.hd-mobile-nav{
+  display:none;padding:6px 22px 16px;
+  border-bottom:1px solid var(--hd-line);background:rgba(15,14,20,.98);
+}
+.hd-mobile-nav.open{display:block}
+.hd-mobile-nav a{
+  display:block;padding:11px 6px;font-size:15px;color:var(--hd-muted);
+  border-bottom:1px solid #201e2b;
+}
+.hd-mobile-nav a:last-child{border-bottom:none}
+.hd-search-tip{
+  display:none;max-width:var(--hd-max);margin:0 auto;
+  padding:0 22px 10px;font-size:13px;color:var(--hd-accent-2);
+}
+.hd-search-tip.show{display:block}
+
+/* ============ HERO ============ */
+.hd-hero{padding:56px 0 30px;position:relative;overflow:hidden}
+.hd-hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(700px 380px at 88% 6%,rgba(255,90,60,.16),transparent 70%),
+    radial-gradient(560px 340px at 4% 92%,rgba(255,209,102,.09),transparent 72%);
+  pointer-events:none;
+}
+.hd-hero-grid{
+  position:relative;display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+  gap:44px;align-items:center;
+}
+.hd-hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:1.5px;color:var(--hd-accent-2);
+  border:1px solid rgba(255,209,102,.3);border-radius:30px;
+  padding:4px 13px;margin-bottom:18px;
+}
+.hd-hero-kicker i{width:6px;height:6px;border-radius:50%;background:var(--hd-accent-2);font-style:normal}
+.hd-hero h1{
+  font-size:clamp(38px,5.4vw,64px);line-height:1.12;
+  letter-spacing:-1px;font-weight:800;margin-bottom:18px;
+}
+.hd-hero h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--hd-accent),var(--hd-accent-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hd-hero-lead{
+  font-size:16.5px;color:var(--hd-muted);max-width:520px;margin-bottom:22px;
+}
+.hd-hero-lead strong{color:var(--hd-text);font-weight:600}
+.hd-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.hd-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:11px;font-size:15px;font-weight:600;
+  transition:.22s;border:1px solid transparent;
+}
+.hd-btn-primary{
+  background:linear-gradient(120deg,var(--hd-accent),#ff7d3c);
+  color:#180a06;box-shadow:0 12px 26px -14px rgba(255,90,60,.95);
+}
+.hd-btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 32px -14px rgba(255,90,60,.95)}
+.hd-btn-ghost{border-color:#3a3750;color:var(--hd-text);background:rgba(255,255,255,.02)}
+.hd-btn-ghost:hover{border-color:var(--hd-accent);color:var(--hd-accent)}
+.hd-hero-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;max-width:520px;
+}
+.hd-stat{
+  background:linear-gradient(160deg,var(--hd-card),#191824);
+  border:1px solid var(--hd-line);border-radius:var(--hd-radius-sm);
+  padding:13px 15px;
+}
+.hd-stat b{
+  display:block;font-size:24px;line-height:1.2;
+  color:var(--hd-accent-2);font-weight:800;letter-spacing:-.5px;
+}
+.hd-stat span{font-size:12.5px;color:var(--hd-muted);display:block;margin-top:3px}
+.hd-hero-visual{position:relative}
+.hd-hero-frame{
+  border-radius:22px;overflow:hidden;border:1px solid #34314a;
+  box-shadow:0 40px 90px -42px rgba(0,0,0,.95);
+  position:relative;aspect-ratio:16/11;
+}
+.hd-hero-frame img{width:100%;height:100%;object-fit:cover}
+.hd-hero-play{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:linear-gradient(180deg,rgba(10,9,15,.05),rgba(10,9,15,.55));
+}
+.hd-hero-play button{
+  width:74px;height:74px;border-radius:50%;
+  background:rgba(255,90,60,.94);display:grid;place-items:center;
+  box-shadow:0 0 0 10px rgba(255,90,60,.16),0 14px 30px -10px rgba(0,0,0,.8);
+  transition:.24s;
+}
+.hd-hero-play button:hover{transform:scale(1.07);background:var(--hd-accent)}
+.hd-hero-play svg{width:26px;height:26px;margin-left:4px}
+.hd-hero-caption{
+  position:absolute;left:16px;bottom:15px;right:16px;
+  display:flex;justify-content:space-between;align-items:flex-end;gap:12px;
+  font-size:13px;color:#e6e4f0;
+}
+.hd-hero-caption b{font-size:15.5px;display:block;line-height:1.35}
+.hd-hero-caption small{color:#b9b6c9;font-size:12px}
+.hd-hero-tag{
+  position:absolute;top:15px;left:16px;
+  background:rgba(10,9,15,.72);border:1px solid #4a4761;
+  color:var(--hd-accent-2);font-size:11.5px;letter-spacing:.6px;
+  padding:4px 10px;border-radius:20px;backdrop-filter:blur(6px);
+}
+.hd-hero-mini{
+  position:absolute;right:-10px;bottom:-26px;
+  width:190px;border-radius:14px;overflow:hidden;
+  border:1px solid #3a3750;background:var(--hd-card);
+  box-shadow:0 24px 46px -22px rgba(0,0,0,.95);
+}
+.hd-hero-mini .hd-mini-img{aspect-ratio:16/10;overflow:hidden}
+.hd-hero-mini .hd-mini-img img{width:100%;height:100%;object-fit:cover}
+.hd-hero-mini .hd-mini-body{padding:9px 11px 11px}
+.hd-hero-mini b{font-size:13px;display:block;line-height:1.35}
+.hd-hero-mini small{font-size:11.5px;color:var(--hd-muted)}
+
+/* ============ Section shared ============ */
+.hd-section{padding:56px 0}
+.hd-section-alt{background:linear-gradient(180deg,#131220,#0f0e14)}
+.hd-sec-head{margin-bottom:32px;max-width:760px}
+.hd-sec-label{
+  font-size:12px;letter-spacing:2.5px;color:var(--hd-accent);
+  text-transform:uppercase;font-weight:700;margin-bottom:9px;
+  display:flex;align-items:center;gap:9px;
+}
+.hd-sec-label::before{content:"";width:22px;height:2px;background:var(--hd-accent);display:block}
+.hd-sec-head h2{
+  font-size:clamp(24px,3.2vw,34px);line-height:1.28;
+  font-weight:800;letter-spacing:-.6px;margin-bottom:11px;
+}
+.hd-sec-head p{color:var(--hd-muted);font-size:15px}
+
+/* ============ Focus / video list ============ */
+.hd-focus{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+  gap:28px;align-items:start;
+}
+.hd-focus-main{
+  background:var(--hd-card);border:1px solid var(--hd-line);
+  border-radius:var(--hd-radius);overflow:hidden;
+}
+.hd-focus-main .hd-fmedia{aspect-ratio:16/9;overflow:hidden;position:relative}
+.hd-focus-main .hd-fmedia img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.hd-focus-main:hover .hd-fmedia img{transform:scale(1.04)}
+.hd-fbadge{
+  position:absolute;top:13px;left:13px;background:var(--hd-accent);
+  color:#170a06;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:20px;
+}
+.hd-focus-body{padding:20px 22px 22px}
+.hd-focus-body h3{font-size:21px;line-height:1.4;margin-bottom:9px}
+.hd-focus-body p{color:var(--hd-muted);font-size:14px;margin-bottom:14px}
+
+.hd-focus-side{display:flex;flex-direction:column;gap:16px}
+.hd-focus-item{
+  display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;
+  background:var(--hd-card);border:1px solid var(--hd-line);
+  border-radius:var(--hd-radius-sm);padding:11px;
+  transition:.22s;
+}
+.hd-focus-item:hover{border-color:#47435f;transform:translateX(3px)}
+.hd-focus-item .hd-fi-img{aspect-ratio:1/1;border-radius:8px;overflow:hidden}
+.hd-focus-item .hd-fi-img img{width:100%;height:100%;object-fit:cover}
+.hd-focus-item h4{font-size:14.5px;line-height:1.42;margin-bottom:4px}
+.hd-focus-item span{font-size:12px;color:var(--hd-muted)}
+
+.hd-video-list{display:flex;flex-direction:column;gap:14px}
+.hd-video-row{
+  background:var(--hd-card);border:1px solid var(--hd-line);
+  border-radius:var(--hd-radius-sm);padding:15px 18px;
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;
+  transition:.2s;
+}
+.hd-video-row:hover{border-color:#4a4663;background:#201f2b}
+.hd-video-row-main{min-width:0}
+.hd-video-row h3{
+  font-size:16.5px;line-height:1.45;margin-bottom:5px;
+  display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+}
+.hd-vr-index{
+  font-size:12px;color:var(--hd-accent-2);font-weight:800;
+  border:1px solid rgba(255,209,102,.35);border-radius:6px;
+  padding:0 6px;line-height:1.55;flex:0 0 auto;
+}
+.hd-video-row p{font-size:13.5px;color:var(--hd-muted);margin-bottom:8px}
+.hd-meta{
+  display:flex;flex-wrap:wrap;gap:7px 15px;
+  font-size:12.5px;color:#8d89a3;
+}
+.hd-meta em{font-style:normal;color:#b6b2c9}
+.hd-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.hd-tag{
+  font-size:11.5px;padding:2px 9px;border-radius:20px;
+  background:rgba(255,90,60,.1);color:#ffb09b;border:1px solid rgba(255,90,60,.22);
+}
+.hd-tag.alt{background:rgba(255,209,102,.09);color:#f0d99a;border-color:rgba(255,209,102,.22)}
+.hd-video-actions{display:flex;gap:8px;flex:0 0 auto}
+.hd-icon-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12.5px;color:var(--hd-muted);
+  border:1px solid var(--hd-line);border-radius:8px;padding:6px 11px;
+  transition:.2s;white-space:nowrap;
+}
+.hd-icon-btn:hover{border-color:var(--hd-accent);color:var(--hd-accent)}
+.hd-icon-btn.liked{color:var(--hd-accent);border-color:rgba(255,90,60,.5);background:rgba(255,90,60,.1)}
+.hd-icon-btn.saved{color:var(--hd-accent-2);border-color:rgba(255,209,102,.5);background:rgba(255,209,102,.09)}
+
+/* ============ Topic / projects ============ */
+.hd-projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.hd-project{
+  background:linear-gradient(165deg,#1d1c27,#161521);
+  border:1px solid var(--hd-line);border-radius:var(--hd-radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:.24s;
+}
+.hd-project:hover{border-color:#4c4766;transform:translateY(-4px)}
+.hd-project-img{aspect-ratio:16/9;overflow:hidden}
+.hd-project-img img{width:100%;height:100%;object-fit:cover}
+.hd-project-body{padding:17px 18px 19px;flex:1;display:flex;flex-direction:column}
+.hd-project-status{
+  font-size:11.5px;color:var(--hd-accent-2);letter-spacing:.6px;margin-bottom:8px;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.hd-project-status i{width:6px;height:6px;border-radius:50%;background:var(--hd-accent-2);font-style:normal}
+.hd-project-body h3{font-size:17px;line-height:1.42;margin-bottom:8px}
+.hd-project-body>p{font-size:13.5px;color:var(--hd-muted);margin-bottom:12px}
+.hd-project-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:auto}
+.hd-project-list li{
+  font-size:13px;color:#b9b5cc;padding-left:15px;position:relative;line-height:1.5;
+}
+.hd-project-list li::before{
+  content:"";position:absolute;left:0;top:9px;width:5px;height:5px;
+  border-radius:50%;background:var(--hd-accent);opacity:.8;
+}
+
+/* ============ Analysis long text ============ */
+.hd-analysis{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);
+  gap:34px;align-items:start;
+}
+.hd-article h2{font-size:clamp(24px,3vw,32px);line-height:1.3;margin-bottom:16px;letter-spacing:-.5px}
+.hd-article h3{
+  font-size:18.5px;margin:26px 0 10px;line-height:1.45;
+  color:var(--hd-accent-2);display:flex;align-items:center;gap:9px;
+}
+.hd-article h3::before{
+  content:"";width:4px;height:16px;border-radius:2px;
+  background:linear-gradient(180deg,var(--hd-accent),var(--hd-accent-2));flex:0 0 auto;
+}
+.hd-article p{font-size:15px;color:#c5c2d4;margin-bottom:13px;line-height:1.9}
+.hd-article p strong{color:var(--hd-text);font-weight:600}
+.hd-article-note{
+  background:rgba(255,90,60,.08);border-left:3px solid var(--hd-accent);
+  padding:14px 17px;border-radius:0 10px 10px 0;font-size:14px;
+  color:#f0bdb1;margin:18px 0;
+}
+.hd-aside-card{
+  background:var(--hd-card);border:1px solid var(--hd-line);
+  border-radius:var(--hd-radius);padding:20px;margin-bottom:18px;
+}
+.hd-aside-card h4{font-size:15.5px;margin-bottom:13px;display:flex;align-items:center;gap:8px}
+.hd-aside-card h4 span{
+  font-size:11px;background:rgba(255,209,102,.14);color:var(--hd-accent-2);
+  padding:1px 8px;border-radius:20px;font-weight:600;
+}
+.hd-aside-list{list-style:none;display:flex;flex-direction:column;gap:11px}
+.hd-aside-list li{font-size:13.5px;color:#b5b1c8;line-height:1.6;padding-left:16px;position:relative}
+.hd-aside-list li::before{
+  content:"›";position:absolute;left:0;top:-1px;color:var(--hd-accent);font-weight:700;
+}
+.hd-aside-list li b{color:var(--hd-text);font-weight:600}
+.hd-quote{
+  font-size:14px;color:#d6d2e3;line-height:1.85;
+  background:linear-gradient(150deg,#241f2e,#1b1a25);
+  border:1px solid #3d3752;border-radius:var(--hd-radius-sm);
+  padding:16px 18px;position:relative;
+}
+.hd-quote::before{
+  content:"“";position:absolute;top:-14px;left:14px;font-size:52px;
+  color:rgba(255,90,60,.35);font-family:Georgia,serif;line-height:1;
+}
+.hd-quote footer{margin-top:11px;font-size:12.5px;color:var(--hd-muted);text-align:right}
+
+/* ============ Authors ============ */
+.hd-authors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.hd-author{
+  background:var(--hd-card);border:1px solid var(--hd-line);
+  border-radius:var(--hd-radius);padding:20px;display:flex;gap:16px;
+  transition:.24s;
+}
+.hd-author:hover{border-color:#4d4868;background:#201f2b}
+.hd-avatar{
+  width:60px;height:60px;border-radius:18px;flex:0 0 auto;
+  display:grid;place-items:center;font-size:22px;font-weight:800;
+  letter-spacing:-.5px;color:#160a06;
+}
+.hd-av-1{background:linear-gradient(140deg,#ff5a3c,#ffbb6a)}
+.hd-av-2{background:linear-gradient(140deg,#ffd166,#ff8a3c)}
+.hd-av-3{background:linear-gradient(140deg,#8b7dff,#ff5a9d)}
+.hd-av-4{background:linear-gradient(140deg,#4fd1c5,#5aa7ff)}
+.hd-av-5{background:linear-gradient(140deg,#ff8a3c,#e8557a)}
+.hd-av-6{background:linear-gradient(140deg,#a3e635,#36c98b)}
+.hd-author-main{min-width:0;flex:1}
+.hd-author-main h3{font-size:16.5px;margin-bottom:3px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hd-author-role{
+  font-size:11px;font-weight:600;color:var(--hd-accent-2);
+  border:1px solid rgba(255,209,102,.32);border-radius:20px;padding:1px 8px;
+}
+.hd-author-field{font-size:12.5px;color:#8f8ba6;margin-bottom:8px}
+.hd-author-main p{font-size:13.5px;color:#b9b5cc;line-height:1.72;margin-bottom:9px}
+.hd-author-meta{display:flex;gap:16px;font-size:12.5px;color:var(--hd-muted);flex-wrap:wrap}
+.hd-author-meta b{color:var(--hd-accent-2);font-weight:700}
+.hd-author-btn{
+  font-size:12.5px;color:var(--hd-accent);border:1px solid rgba(255,90,60,.35);
+  border-radius:8px;padding:5px 12px;transition:.2s;margin-top:2px;align-self:flex-start;
+}
+.hd-author-btn:hover{background:rgba(255,90,60,.12)}
+
+/* ============ Reviews ============ */
+.hd-reviews{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.hd-review{
+  background:var(--hd-card);border:1px solid var(--hd-line);
+  border-radius:var(--hd-radius-sm);padding:17px 19px;
+  display:flex;flex-direction:column;gap:9px;
+}
+.hd-review-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hd-review-av{
+  width:34px;height:34px;border-radius:50%;flex:0 0 auto;
+  display:grid;place-items:center;font-size:14px;font-weight:700;color:#160a06;
+}
+.hd-review-head b{font-size:13.5px}
+.hd-review-stars{color:var(--hd-accent-2);font-size:12.5px;letter-spacing:2px}
+.hd-review p{font-size:14px;color:#c2bed3;line-height:1.8}
+.hd-review time{font-size:12px;color:#79758f}
+.hd-review-wide{grid-column:1/-1}
+.hd-rating-summary{
+  grid-column:1/-1;background:linear-gradient(120deg,#241f2e,#1a1924);
+  border:1px solid #3e3854;border-radius:var(--hd-radius-sm);
+  padding:18px 20px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+}
+.hd-rating-score{font-size:40px;font-weight:800;color:var(--hd-accent-2);line-height:1}
+.hd-rating-summary small{font-size:13px;color:var(--hd-muted);display:block;margin-top:4px}
+.hd-rating-bars{flex:1;min-width:180px;display:flex;flex-direction:column;gap:6px}
+.hd-bar{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--hd-muted)}
+.hd-bar-track{flex:1;height:6px;border-radius:4px;background:#302d42;overflow:hidden}
+.hd-bar-track i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--hd-accent),var(--hd-accent-2))}
+
+/* ============ News + Partner + FAQ ============ */
+.hd-triple{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:start}
+.hd-news{display:flex;flex-direction:column;gap:13px}
+.hd-news-item{
+  display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;
+  background:var(--hd-card);border:1px solid var(--hd-line);
+  border-radius:var(--hd-radius-sm);padding:13px 16px;
+}
+.hd-news-date{
+  font-size:11.5px;color:var(--hd-accent-2);font-weight:700;line-height:1.5;
+  border-right:1px solid var(--hd-line);padding-right:12px;
+}
+.hd-news-date b{display:block;font-size:20px;font-weight:800;color:var(--hd-text);letter-spacing:-.5px}
+.hd-news-item h3{font-size:14.5px;margin-bottom:4px;line-height:1.45}
+.hd-news-item p{font-size:12.8px;color:var(--hd-muted);line-height:1.65}
+
+.hd-partners{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.hd-partner{
+  background:var(--hd-card);border:1px solid var(--hd-line);
+  border-radius:var(--hd-radius-sm);padding:15px 16px;
+  display:flex;align-items:center;gap:11px;transition:.2s;
+}
+.hd-partner:hover{border-color:#4b4766;background:#201f2b}
+.hd-partner-logo{
+  width:34px;height:34px;border-radius:9px;flex:0 0 auto;
+  display:grid;place-items:center;font-size:14px;font-weight:800;color:#160a06;
+}
+.hd-partner b{font-size:13.5px;display:block;line-height:1.35}
+.hd-partner small{font-size:11.5px;color:var(--hd-muted)}
+
+.hd-faq{display:flex;flex-direction:column;gap:11px}
+.hd-faq details{
+  background:var(--hd-card);border:1px solid var(--hd-line);
+  border-radius:var(--hd-radius-sm);overflow:hidden;transition:.2s;
+}
+.hd-faq details[open]{border-color:#4a4564;background:#211f2d}
+.hd-faq summary{
+  list-style:none;cursor:pointer;padding:14px 18px;
+  font-size:14.5px;font-weight:600;display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.hd-faq summary::-webkit-details-marker{display:none}
+.hd-faq summary::after{
+  content:"+";font-size:19px;color:var(--hd-accent);font-weight:400;flex:0 0 auto;
+  transition:.2s;line-height:1;
+}
+.hd-faq details[open] summary::after{content:"–";transform:rotate(180deg)}
+.hd-faq details p{
+  padding:0 18px 15px;font-size:13.5px;color:var(--hd-muted);line-height:1.8;
+}
+
+/* ============ CTA / submit ============ */
+.hd-cta{
+  background:linear-gradient(120deg,#2a1430,#331a22 50%,#231a10);
+  border:1px solid #4a2a38;border-radius:22px;
+  padding:38px 34px;display:flex;align-items:center;justify-content:space-between;
+  gap:26px;flex-wrap:wrap;position:relative;overflow:hidden;
+}
+.hd-cta::after{
+  content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;
+  border-radius:50%;background:radial-gradient(circle,rgba(255,90,60,.22),transparent 70%);
+}
+.hd-cta h2{font-size:clamp(21px,2.6vw,28px);line-height:1.35;margin-bottom:8px;letter-spacing:-.4px}
+.hd-cta p{font-size:14.5px;color:#d3c3c8;max-width:540px}
+.hd-cta-actions{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+
+/* ============ Footer ============ */
+.hd-footer{
+  background:#0b0a11;border-top:1px solid var(--hd-line);
+  padding:46px 0 26px;margin-top:20px;
+}
+.hd-footer-grid{
+  display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));
+  gap:32px;margin-bottom:34px;
+}
+.hd-footer-brand b{font-size:18px;display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.hd-footer-brand p{font-size:13px;color:#8d89a3;line-height:1.8;max-width:300px}
+.hd-footer-col h4{font-size:13.5px;margin-bottom:12px;color:var(--hd-text);letter-spacing:.4px}
+.hd-footer-col a,.hd-footer-col span{
+  display:block;font-size:12.8px;color:#8d89a3;margin-bottom:8px;transition:.2s;
+}
+.hd-footer-col a:hover{color:var(--hd-accent)}
+.hd-footer-bottom{
+  border-top:1px solid #221f2e;padding-top:18px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12.3px;color:#6f6b87;
+}
+.hd-footer-bottom span{line-height:1.7}
+
+/* ============ Float + toast + modal ============ */
+.hd-to-top{
+  position:fixed;right:22px;bottom:26px;z-index:130;
+  width:44px;height:44px;border-radius:12px;
+  background:var(--hd-card-2);border:1px solid var(--hd-line);
+  color:var(--hd-text);display:grid;place-items:center;font-size:18px;
+  opacity:0;visibility:hidden;transform:translateY(10px);transition:.26s;
+  box-shadow:0 10px 26px -12px rgba(0,0,0,.9);
+}
+.hd-to-top.show{opacity:1;visibility:visible;transform:none}
+.hd-to-top:hover{border-color:var(--hd-accent);color:var(--hd-accent)}
+.hd-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:#26232f;border:1px solid #4a4564;color:var(--hd-text);
+  font-size:13.5px;padding:11px 20px;border-radius:11px;z-index:200;
+  opacity:0;visibility:hidden;transition:.26s;
+  box-shadow:0 18px 40px -18px rgba(0,0,0,.95);max-width:88vw;text-align:center;
+}
+.hd-toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.hd-modal{
+  position:fixed;inset:0;z-index:210;display:none;
+  align-items:center;justify-content:center;padding:22px;
+  background:rgba(6,5,10,.78);backdrop-filter:blur(4px);
+}
+.hd-modal.show{display:flex}
+.hd-modal-card{
+  background:#191823;border:1px solid #3e3954;border-radius:18px;
+  max-width:520px;width:100%;max-height:86vh;overflow:auto;
+  padding:26px 26px 24px;position:relative;
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.95);
+}
+.hd-modal-card h3{font-size:19px;margin-bottom:14px;padding-right:34px}
+.hd-modal-close{
+  position:absolute;top:14px;right:14px;width:32px;height:32px;
+  border-radius:9px;border:1px solid var(--hd-line);
+  display:grid;place-items:center;font-size:16px;color:var(--hd-muted);
+  transition:.2s;
+}
+.hd-modal-close:hover{border-color:var(--hd-accent);color:var(--hd-accent)}
+.hd-modal-card p{font-size:14px;color:#bcb8ce;line-height:1.8}
+.hd-field{margin-bottom:13px}
+.hd-field label{display:block;font-size:12.5px;color:var(--hd-muted);margin-bottom:6px}
+.hd-field input,.hd-field textarea{
+  width:100%;background:#131220;border:1px solid var(--hd-line);
+  border-radius:9px;color:var(--hd-text);font-size:14px;padding:10px 12px;
+  outline:none;transition:.2s;resize:vertical;
+}
+.hd-field input:focus,.hd-field textarea:focus{border-color:var(--hd-accent)}
+.hd-share-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.hd-share-item{
+  border:1px solid var(--hd-line);border-radius:10px;padding:12px;
+  font-size:13.5px;text-align:center;transition:.2s;color:#c8c4da;
+}
+.hd-share-item:hover{border-color:var(--hd-accent);color:var(--hd-accent);background:rgba(255,90,60,.07)}
+
+/* ============ Responsive ============ */
+@media(max-width:1000px){
+  .hd-hero-grid{grid-template-columns:minmax(0,1fr);gap:36px}
+  .hd-hero-visual{max-width:640px}
+  .hd-hero-mini{display:none}
+  .hd-focus{grid-template-columns:minmax(0,1fr)}
+  .hd-projects{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hd-analysis{grid-template-columns:minmax(0,1fr)}
+  .hd-triple{grid-template-columns:minmax(0,1fr)}
+  .hd-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:860px){
+  :root{--hd-sticky:104px}
+  .hd-nav{display:none}
+  .hd-burger{display:flex}
+  .hd-search{flex:1 1 150px}
+  .hd-authors{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:700px){
+  .hd-announce-inner{padding:7px 16px;gap:9px}
+  .hd-announce-track{font-size:12.5px;gap:22px}
+  .hd-nav-wrap{padding:11px 16px;gap:12px}
+  .hd-brand-text b{font-size:16px}
+  .hd-brand-text small{font-size:10px;letter-spacing:1.4px}
+  .hd-search{display:none}
+  .hd-container{padding:0 16px}
+  .hd-hero{padding:38px 0 22px}
+  .hd-hero-stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+  .hd-stat{padding:10px 11px}
+  .hd-stat b{font-size:19px}
+  .hd-stat span{font-size:11px}
+  .hd-section{padding:40px 0}
+  .hd-projects{grid-template-columns:minmax(0,1fr)}
+  .hd-reviews{grid-template-columns:minmax(0,1fr)}
+  .hd-video-row{grid-template-columns:minmax(0,1fr);gap:11px}
+  .hd-video-actions{justify-content:flex-start;flex-wrap:wrap}
+  .hd-cta{padding:26px 20px}
+  .hd-footer-grid{grid-template-columns:minmax(0,1fr);gap:22px}
+  .hd-partners{grid-template-columns:minmax(0,1fr)}
+  .hd-author{flex-direction:column}
+  .hd-to-top{right:14px;bottom:18px;width:40px;height:40px}
+  .hd-news-item{grid-template-columns:54px minmax(0,1fr);padding:12px 13px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ============ 吸顶：公告条 + 页头 ============ -->
+<div class="hd-top-stack">
+  <div class="hd-announce">
+    <div class="hd-announce-inner">
+      <span class="hd-announce-badge">官方发布</span>
+      <div class="hd-announce-track">
+        <span><i></i>11.22 新增《花都夜航》4K修复版第 1-6 集，免费在线观看已开放</span>
+        <span><i></i>“花都短片挑战赛”报名通道开启，面向所有原创作者征集 3-10 分钟作品</span>
+        <span><i></i>创作投稿页升级：支持批量上传与草稿下载，审核进度可实时查看</span>
+      </div>
+    </div>
+  </div>
+  <header class="hd-header">
+    <div class="hd-nav-wrap">
+      <a class="hd-brand" href="#hd-top" aria-label="花都影视首页">
+        <span class="hd-brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6.5L18 12L9 17.5V6.5Z" fill="#1a0c08"/></svg>
+        </span>
+        <span class="hd-brand-text">
+          <b>花都影视</b>
+          <small>HUA DU FILM</small>
+        </span>
+      </a>
+      <nav class="hd-nav" aria-label="主导航">
+        <a href="#hd-focus">焦点内容</a>
+        <a href="#hd-topics">专题企划</a>
+        <a href="#hd-analysis">关键词解析</a>
+        <a href="#hd-creators">创作者</a>
+        <a href="#hd-reviews">社区口碑</a>
+        <a href="#hd-faq">帮助中心</a>
+      </nav>
+      <div class="hd-search">
+        <input id="hd-search-input" type="search" placeholder="搜索影片、创作者、专题" aria-label="站内搜索">
+        <button id="hd-search-btn" type="button" aria-label="搜索">搜索</button>
+      </div>
+      <button class="hd-burger" id="hd-burger" type="button" aria-label="展开导航" aria-expanded="false">☰</button>
+    </div>
+    <div class="hd-mobile-nav" id="hd-mobile-nav">
+      <a href="#hd-focus">焦点内容</a>
+      <a href="#hd-topics">专题企划</a>
+      <a href="#hd-analysis">关键词解析</a>
+      <a href="#hd-creators">创作者</a>
+      <a href="#hd-reviews">社区口碑</a>
+      <a href="#hd-news">企业动态</a>
+      <a href="#hd-faq">帮助中心</a>
+      <a href="#hd-submit">投稿合作</a>
+    </div>
+    <div class="hd-search-tip" id="hd-search-tip"></div>
+  </header>
+</div>
+
+<main id="hd-top">
+
+  <!-- ============ S2 品牌首屏 ============ -->
+  <section class="hd-hero" aria-labelledby="hd-hero-title">
+    <div class="hd-container">
+      <div class="hd-hero-grid">
+        <div class="hd-hero-copy">
+          <span class="hd-hero-kicker"><i></i>花都影视官方网站 · 免费高清在线观看</span>
+          <h1 id="hd-hero-title">花都影视<em>在线</em>，<br>把好故事留在此刻</h1>
+          <p class="hd-hero-lead">
+            花都影视是一家深耕内容生态的<strong>影视视频品牌</strong>，以<strong>在线观看</strong>与<strong>免费高清</strong>为核心服务，
+            汇聚原创短片、城市影像、人物访谈与幕后纪录，为观众与创作者搭起一座持续运营的社区。
+          </p>
+          <div class="hd-hero-actions">
+            <a class="hd-btn hd-btn-primary" href="#hd-focus">开始观看
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6.5L18 12L9 17.5V6.5Z" fill="currentColor"/></svg>
+            </a>
+            <button class="hd-btn hd-btn-ghost" id="hd-share-open" type="button">分享本站</button>
+            <a class="hd-btn hd-btn-ghost" href="#hd-submit">作者投稿</a>
+          </div>
+          <div class="hd-hero-stats">
+            <div class="hd-stat"><b>1,286</b><span>部原创影片在线</span></div>
+            <div class="hd-stat"><b>6.4 万</b><span>创作者持续投稿</span></div>
+            <div class="hd-stat"><b>98.2%</b><span>社区口碑好评率</span></div>
+          </div>
+        </div>
+        <div class="hd-hero-visual">
+          <div class="hd-hero-frame">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 550'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%231b1430'/%3E%3Cstop offset='.55' stop-color='%233d2140'/%3E%3Cstop offset='1' stop-color='%23b8553a'/%3E%3C/linearGradient%3E%3ClinearGradient id='sea' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ff9a5a'/%3E%3Cstop offset='1' stop-color='%23261530'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='550' fill='url(%23sky)'/%3E%3Ccircle cx='560' cy='210' r='64' fill='%23ffd166' opacity='.92'/%3E%3Crect y='330' width='800' height='220' fill='url(%23sea)'/%3E%3Cpath d='M0 330 Q140 300 280 332 T560 318 T800 336 L800 360 L0 360Z' fill='%231a1128' opacity='.7'/%3E%3Cg fill='%23150e1e'%3E%3Crect x='60' y='222' width='30' height='120'/%3E%3Crect x='100' y='186' width='22' height='156'/%3E%3Crect x='132' y='240' width='38' height='102'/%3E%3Crect x='182' y='204' width='26' height='138'/%3E%3Crect x='220' y='252' width='34' height='90'/%3E%3Crect x='640' y='228' width='28' height='114'/%3E%3Crect x='678' y='196' width='22' height='146'/%3E%3Crect x='710' y='248' width='40' height='94'/%3E%3Crect x='760' y='214' width='26' height='128'/%3E%3C/g%3E%3Cg fill='%23ffd58a' opacity='.85'%3E%3Crect x='66' y='236' width='6' height='7'/%3E%3Crect x='80' y='256' width='6' height='7'/%3E%3Crect x='106' y='202' width='5' height='6'/%3E%3Crect x='112' y='228' width='5' height='6'/%3E%3Crect x='140' y='256' width='6' height='7'/%3E%3Crect x='188' y='220' width='5' height='6'/%3E%3Crect x='228' y='268' width='6' height='7'/%3E%3Crect x='648' y='244' width='5' height='6'/%3E%3Crect x='686' y='212' width='5' height='6'/%3E%3Crect x='720' y='264' width='6' height='7'/%3E%3Crect x='768' y='230' width='5' height='6'/%3E%3C/g%3E%3Cpath d='M300 400 L500 400 L470 330 L330 330Z' fill='%23201630'/%3E%3Cpath d='M400 400 L400 300' stroke='%23150e1e' stroke-width='4'/%3E%3Cpath d='M400 302 L470 330 L400 348Z' fill='%23ff5a3c'/%3E%3Crect x='318' y='398' width='164' height='16' rx='7' fill='%23150e1e'/%3E%3Cg opacity='.4'%3E%3Cpath d='M440 240 Q480 220 520 240 Q560 260 600 236' stroke='%23ffd166' stroke-width='2' fill='none'/%3E%3C/g%3E%3C/svg%3E" alt="花都影视首屏主视觉：暮色中的花都河岸与远行小舟" width="800" height="550">
+            <span class="hd-hero-tag">本周主推 · 4K 修复</span>
+            <div class="hd-hero-play">
+              <button type="button" id="hd-hero-play" aria-label="播放本周主推影片">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6.5L18 12L9 17.5V6.5Z" fill="#1a0c08"/></svg>
+              </button>
+            </div>
+            <div class="hd-hero-caption">
+              <div>
+                <b>《花都夜航》</b>
+                <small>城市影像 · 纪录长片 · 48 分钟</small>
+              </div>
+              <div style="text-align:right">
+                <b style="color:#ffd166">4K · 免费</b>
+                <small>首映于 11.18</small>
+              </div>
+            </div>
+          </div>
+          <div class="hd-hero-mini">
+            <div class="hd-mini-img">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff5a3c'/%3E%3Cstop offset='1' stop-color='%23ffd166'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='320' height='200' fill='%23231a2e'/%3E%3Ccircle cx='160' cy='100' r='54' fill='url(%23g2)' opacity='.9'/%3E%3Ccircle cx='160' cy='100' r='70' fill='none' stroke='%23ffd166' stroke-width='1.5' opacity='.4'/%3E%3Ccircle cx='160' cy='100' r='88' fill='none' stroke='%23ff5a3c' stroke-width='1' opacity='.25'/%3E%3Cpath d='M148 78 L190 100 L148 122Z' fill='%23231a2e'/%3E%3C/svg%3E" alt="一分钟预告：花都老电影院口述实录" width="320" height="200">
+            </div>
+            <div class="hd-mini-body">
+              <b>《老影院口述史》</b>
+              <small>人物访谈 · 12 分钟</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ S3 焦点内容 ============ -->
+  <section class="hd-section hd-section-alt" id="hd-focus" aria-labelledby="hd-focus-title">
+    <div class="hd-container">
+      <div class="hd-sec-head">
+        <span class="hd-sec-label">Focus / 焦点内容</span>
+        <h2 id="hd-focus-title">花都影视本周焦点：值得一看的在线精品</h2>
+        <p>编辑团队从近 200 部新上线内容中挑出 3 部重点影片，另有 5 条可免费在线观看的条目，涵盖城市探索、人物访谈与创作幕后。</p>
+      </div>
+
+      <div class="hd-focus">
+        <article class="hd-focus-main">
+          <div class="hd-fmedia">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='n1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231a1328'/%3E%3Cstop offset='1' stop-color='%234a2038'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23n1)'/%3E%3Cg opacity='.9'%3E%3Crect x='64' y='120' width='120' height='250' fill='%23261b34'/%3E%3Crect x='200' y='90' width='86' height='280' fill='%232d1f3c'/%3E%3Crect x='302' y='150' width='140' height='220' fill='%23241a30'/%3E%3Crect x='458' y='110' width='96' height='260' fill='%232d1f3c'/%3E%3Crect x='570' y='160' width='150' height='210' fill='%23261b34'/%3E%3C/g%3E%3Cg fill='%23ffd58a' opacity='.8'%3E%3Crect x='78' y='140' width='7' height='9'/%3E%3Crect x='98' y='168' width='7' height='9'/%3E%3Crect x='120' y='146' width='7' height='9'/%3E%3Crect x='84' y='196' width='7' height='9'/%3E%3Crect x='212' y='110' width='6' height='8'/%3E%3Crect x='236' y='142' width='6' height='8'/%3E%3Crect x='256' y='116' width='6' height='8'/%3E%3Crect x='318' y='172' width='7' height='9'/%3E%3Crect x='356' y='200' width='7' height='9'/%3E%3Crect x='392' y='166' width='7' height='9'/%3E%3Crect x='470' y='132' width='6' height='8'/%3E%3Crect x='502' y='164' width='6' height='8'/%3E%3Crect x='586' y='182' width='7' height='9'/%3E%3Crect x='626' y='210' width='7' height='9'/%3E%3Crect x='664' y='178' width='7' height='9'/%3E%3C/g%3E%3Cg stroke='%23ff5a3c' stroke-width='2' opacity='.65' fill='none'%3E%3Cpath d='M64 380 Q200 340 340 376 T600 362 T800 380'/%3E%3C/g%3E%3Cg fill='%23ff5a3c' opacity='.85'%3E%3Ccircle cx='120' cy='410' r='5'/%3E%3Ccircle cx='260' cy='418' r='4'/%3E%3Ccircle cx='420' cy='414' r='5'/%3E%3Ccircle cx='600' cy='420' r='4'/%3E%3Ccircle cx='720' cy='412' r='5'/%3E%3C/g%3E%3C/svg%3E" alt="《花都夜航》4K修复版城市夜景画面" width="800" height="450">
+            <span class="hd-fbadge">编辑推荐</span>
+          </div>
+          <div class="hd-focus-body">
+            <h3>《花都夜航》：一条河流与一座城市的四次回望</h3>
+            <p>导演用四年时间沿花都河拍摄，记录夜里十二点仍亮着的理发店、货船与跨江缆车。4K 修复版上线后首次开放高清在线观看，附带导演手记与逐帧摄影注释，是本季度最值得完整看完的原创纪录长片。</p>
+            <div class="hd-tags">
+              <span class="hd-tag">城市探索</span>
+              <span class="hd-tag alt">品牌故事</span>
+              <span class="hd-tag">4K 修复</span>
+            </div>
+            <div class="hd-meta">
+              <span>作者 <em>南岸影像社</em></span>
+              <span>播放 <em>32.6 万</em></span>
+              <span>点赞 <em>1.8 万</em></span>
+              <span>收藏 <em>9,240</em></span>
+            </div>
+          </div>
+        </article>
+
+        <div class="hd-focus-side">
+          <article class="hd-focus-item">
+            <div class="hd-fi-img">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23201a2c'/%3E%3Ccircle cx='100' cy='86' r='38' fill='%23ffd166' opacity='.9'/%3E%3Cpath d='M40 170 Q100 110 160 170 L160 200 L40 200Z' fill='%23ff5a3c' opacity='.8'/%3E%3Ccircle cx='100' cy='86' r='50' fill='none' stroke='%23ffd166' stroke-width='1.5' opacity='.35'/%3E%3C/svg%3E" alt="《一个人的放映厅》短片封面" width="200" height="200">
+            </div>
+            <div>
+              <h4>《一个人的放映厅》</h4>
+              <span>情感故事 · 17 分钟 · 免费</span>
+            </div>
+          </article>
+          <article class="hd-focus-item">
+            <div class="hd-fi-img">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%231d2030'/%3E%3Cg fill='none' stroke='%235aa7ff' stroke-width='2'%3E%3Cpath d='M30 150 L70 100 L110 130 L150 70 L180 96'/%3E%3C/g%3E%3Ccircle cx='70' cy='100' r='6' fill='%23ffd166'/%3E%3Ccircle cx='150' cy='70' r='6' fill='%23ff5a3c'/%3E%3Crect x='30' y='40' width='60' height='8' rx='4' fill='%234a5570'/%3E%3Crect x='30' y='58' width='34' height='6' rx='3' fill='%23364058'/%3E%3C/svg%3E" alt="《镜头之后》创作幕后图" width="200" height="200">
+            </div>
+            <div>
+              <h4>《镜头之后》第一季合集</h4>
+              <span>创作幕后 · 6 集 · 高清</span>
+            </div>
+          </article>
+          <article class="hd-focus-item">
+            <div class="hd-fi-img">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%2324201a'/%3E%3Cg fill='%23ff8a3c'%3E%3Crect x='40' y='110' width='24' height='60' rx='3'/%3E%3Crect x='74' y='80' width='24' height='90' rx='3'/%3E%3Crect x='108' y='56' width='24' height='114' rx='3'/%3E%3Crect x='142' y='94' width='24' height='76' rx='3'/%3E%3C/g%3E%3Cpath d='M40 60 L160 44' stroke='%23ffd166' stroke-width='3' stroke-linecap='round' opacity='.8'/%3E%3C/svg%3E" alt="《街角的声音》声音采集图示" width="200" height="200">
+            </div>
+            <div>
+              <h4>《街角的声音》</h4>
+              <span>在地文化 · 24 分钟</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="hd-video-list" style="margin-top:30px">
+        <article class="hd-video-row">
+          <div class="hd-video-row-main">
+            <h3><span class="hd-vr-index">01</span>花都桥下：三个夜班人的十二小时</h3>
+            <p>跟拍环卫工、外卖骑手与出租车司机，用固定机位完成一次安静的城市观察，全片无旁白。</p>
+            <div class="hd-tags"><span class="hd-tag">日常记录</span><span class="hd-tag alt">真实</span></div>
+            <div class="hd-meta"><span>作者 <em>林照</em></span><span>播放 <em>12.4 万</em></span><span>点赞 <em>6,830</em></span><span>收藏 <em>3,156</em></span></div>
+          </div>
+          <div class="hd-video-actions">
+            <button class="hd-icon-btn hd-like-btn" type="button" data-count="6830">♡ 点赞 <span>6,830</span></button>
+            <button class="hd-icon-btn hd-save-btn" type="button">☆ 收藏</button>
+          </div>
+        </article>
+
+        <article class="hd-video-row">
+          <div class="hd-video-row-main">
+            <h3><span class="hd-vr-index">02</span>从剧本到成片：一支短片的三次推翻重来</h3>
+            <p>完整展示《一个人的放映厅》的剧本围读、分镜修改与剪辑室争论，适合正在准备投稿的作者观看。</p>
+            <div class="hd-tags"><span class="hd-tag">教程干货</span><span class="hd-tag alt">创作幕后</span></div>
+            <div class="hd-meta"><span>作者 <em>梁木工作间</em></span><span>播放 <em>9.7 万</em></span><span>点赞 <em>4,412</em></span><span>收藏 <em>5,208</em></span></div>
+          </div>
+          <div class="hd-video-actions">
+            <button class="hd-icon-btn hd-like-btn" type="button" data-count="4412">♡ 点赞 <span>4,412</span></button>
+            <button class="hd-icon-btn hd-save-btn" type="button">☆ 收藏</button>
+          </div>
+        </article>
+
+        <article class="hd-video-row">
+          <div class="hd-video-row-main">
+            <h3><span class="hd-vr-index">03</span>花都老电影院：最后一位胶片放映员</h3>
+            <p>人物访谈加口述实录，76 岁的放映员黄师傅讲了三小时，我们留下了 21 分钟。</p>
+            <div class="hd-tags"><span class="hd-tag">人物访谈</span><span class="hd-tag alt">治愈影像</span></div>
+            <div class="hd-meta"><span>作者 <em>秦屿</em></span><span>播放 <em>18.9 万</em></span><span>点赞 <em>9,140</em></span><span>收藏 <em>6,725</em></span></div>
+          </div>
+          <div class="hd-video-actions">
+            <button class="hd-icon-btn hd-like-btn" type="button" data-count="9140">♡ 点赞 <span>9,140</span></button>
+            <button class="hd-icon-btn hd-save-btn" type="button">☆ 收藏</button>
+          </div>
+        </article>
+
+        <article class="hd-video-row">
+          <div class="hd-video-row-main">
+            <h3><span class="hd-vr-index">04</span>五家老字号早餐铺，一条街的早晨</h3>
+            <p>美食烹饪与在地文化交叉选题，镜头从凌晨四点开始，跟着蒸汽与天亮走完一条街。</p>
+            <div class="hd-tags"><span class="hd-tag">美食烹饪</span><span class="hd-tag alt">城市探索</span></div>
+            <div class="hd-meta"><span>作者 <em>阿禾食记</em></span><span>播放 <em>26.3 万</em></span><span>点赞 <em>1.3 万</em></span><span>收藏 <em>8,914</em></span></div>
+          </div>
+          <div class="hd-video-actions">
+            <button class="hd-icon-btn hd-like-btn" type="button" data-count="13000">♡ 点赞 <span>1.3 万</span></button>
+            <button class="hd-icon-btn hd-save-btn" type="button">☆ 收藏</button>
+          </div>
+        </article>
+
+        <article class="hd-video-row">
+          <div class="hd-video-row-main">
+            <h3><span class="hd-vr-index">05</span>器材不重要：用一部手机拍完一支纪录片</h3>
+            <p>实用技巧向内容，包含收音、稳定、补光三个模块的平价方案，全部附可下载的清单。</p>
+            <div class="hd-tags"><span class="hd-tag">经验分享</span><span class="hd-tag alt">科技前沿</span></div>
+            <div class="hd-meta"><span>作者 <em>林照</em></span><span>播放 <em>7.2 万</em></span><span>点赞 <em>3,560</em></span><span>收藏 <em>4,127</em></span></div>
+          </div>
+          <div class="hd-video-actions">
+            <button class="hd-icon-btn hd-like-btn" type="button" data-count="3560">♡ 点赞 <span>3,560</span></button>
+            <button class="hd-icon-btn hd-save-btn" type="button">☆ 收藏</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ S4 专题企划 ============ -->
+  <section class="hd-section" id="hd-topics" aria-labelledby="hd-topics-title">
+    <div class="hd-container">
+      <div class="hd-sec-head">
+        <span class="hd-sec-label">Projects / 专题企划</span>
+        <h2 id="hd-topics-title">三个正在更新的花都影视专题企划</h2>
+        <p>专题由编辑与作者共同策划，每月更新，全部内容支持免费高清在线观看，并开放社区投票与投稿。</p>
+      </div>
+      <div class="hd-projects">
+        <article class="hd-project">
+          <div class="hd-project-img">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3ClinearGradient id='p1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232b1f3a'/%3E%3Cstop offset='1' stop-color='%23a34a35'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='url(%23p1)'/%3E%3Cg fill='%23ffd166' opacity='.85'%3E%3Ccircle cx='120' cy='210' r='3'/%3E%3Ccircle cx='180' cy='196' r='3'/%3E%3Ccircle cx='246' cy='216' r='3'/%3E%3Ccircle cx='310' cy='192' r='3'/%3E%3Ccircle cx='372' cy='212' r='3'/%3E%3C/g%3E%3Cpath d='M0 214 Q120 186 240 212 T480 200 L480 270 L0 270Z' fill='%231d1528'/%3E%3Crect x='196' y='96' width='88' height='72' rx='6' fill='%23140f1e'/%3E%3Ccircle cx='240' cy='132' r='22' fill='none' stroke='%23ff5a3c' stroke-width='3'/%3E%3Cpath d='M232 122 L252 132 L232 142Z' fill='%23ff5a3c'/%3E%3Cpath d='M150 96 L330 96' stroke='%23ffd166' stroke-width='2' opacity='.4' stroke-dasharray='6 6'/%3E%3C/svg%3E" alt="专题「花都夜航计划」主视觉" width="480" height="270">
+          </div>
+          <div class="hd-project-body">
+            <span class="hd-project-status"><i></i>更新至第 6 期</span>
+            <h3>花都夜航计划</h3>
+            <p>以夜间城市为母题的年度专题，六位作者、六种夜的颜色，记录这座城熄灯之后仍亮着的人。</p>
+            <ul class="hd-project-list">
+              <li>《十一点半的糖水铺》· 阿禾食记</li>
+              <li>《末班缆车》· 南岸影像社</li>
+              <li>《夜班兽医》· 秦屿</li>
+            </ul>
+          </div>
+        </article>
+        <article class="hd-project">
+          <div class="hd-project-img">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23171c2b'/%3E%3Cg stroke='%235aa7ff' stroke-width='1.5' opacity='.55' fill='none'%3E%3Cpath d='M40 200 L120 130 L200 170 L280 100 L360 150 L440 90'/%3E%3C/g%3E%3Cg fill='%235aa7ff' opacity='.85'%3E%3Ccircle cx='120' cy='130' r='5'/%3E%3Ccircle cx='200' cy='170' r='5'/%3E%3Ccircle cx='280' cy='100' r='5'/%3E%3Ccircle cx='360' cy='150' r='5'/%3E%3C/g%3E%3Crect x='40' y='46' width='128' height='10' rx='5' fill='%232a3550'/%3E%3Crect x='40' y='68' width='84' height='8' rx='4' fill='%23232c44'/%3E%3Crect x='300' y='46' width='140' height='10' rx='5' fill='%23ff5a3c' opacity='.8'/%3E%3Crect x='300' y='68' width='96' height='8' rx='4' fill='%233c2630'/%3E%3C/svg%3E" alt="专题「创作方法论」数据与流程示意" width="480" height="270">
+          </div>
+          <div class="hd-project-body">
+            <span class="hd-project-status"><i></i>长期征稿中</span>
+            <h3>创作方法论</h3>
+            <p>面向新作者的教程与幕后专题，每期拆解一支成片的结构、剪辑与声音，附可下载脚本模板。</p>
+            <ul class="hd-project-list">
+              <li>《三幕结构在 8 分钟短片里怎么用》</li>
+              <li>《同期声录制：六个常见错误》</li>
+              <li>《调色不是滤镜：一次完整流程演示》</li>
+            </ul>
+          </div>
+        </article>
+        <article class="hd-project">
+          <div class="hd-project-img">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%231d2418'/%3E%3Cg fill='%23a3e635' opacity='.8'%3E%3Crect x='60' y='170' width='42' height='70' rx='4'/%3E%3Crect x='118' y='132' width='42' height='108' rx='4'/%3E%3Crect x='176' y='96' width='42' height='144' rx='4'/%3E%3Crect x='234' y='150' width='42' height='90' rx='4'/%3E%3Crect x='292' y='112' width='42' height='128' rx='4'/%3E%3Crect x='350' y='160' width='42' height='80' rx='4'/%3E%3C/g%3E%3Ccircle cx='300' cy='66' r='26' fill='%23ffd166' opacity='.85'/%3E%3Cpath d='M60 76 L420 76' stroke='%23a3e635' stroke-width='1.5' opacity='.3' stroke-dasharray='5 7'/%3E%3C/svg%3E" alt="专题「在地生长」城市街区影像图" width="480" height="270">
+          </div>
+          <div class="hd-project-body">
+            <span class="hd-project-status"><i></i>投票进行中</span>
+            <h3>在地生长</h3>
+            <p>把镜头交给本地居民，记录旧街区改造、手作工坊与社区花园的三个月变化，观众可参与投票。</p>
+            <ul class="hd-project-list">
+              <li>《菜市场二期：摊主的搬迁日记》</li>
+              <li>《一间修表铺的五十年》</li>
+              <li>《社区花园第一次开花》</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ S4/M15 关键词解析 ============ -->
+  <section class="hd-section hd-section-alt" id="hd-analysis" aria-labelledby="hd-analysis-title">
+    <div class="hd-container">
+      <div class="hd-analysis">
+        <div class="hd-article">
+          <span class="hd-sec-label">Insight / 深度解析</span>
+          <h2 id="hd-analysis-title">花都影视在线免费观看，是怎么做到既专业又可信的</h2>
+
+          <p>作为花都影视官方网站的内容专栏，这一篇想把“花都 影视 在线 线观 免费”这几个经常被一起搜索的词拆开讲清楚。很多观众第一次打开一个影视页面时，关心的是能不能顺利播放；第二次打开时，关心的往往变成内容值不值得看、画质稳不稳定、数据和口碑是否真实。花都影视从 2019 年开始做原创视频内容，到 2026 年已经持续运营七年，我们更愿意把“在线”“免费”“高清”理解为一种服务承诺，而不是挂在标题上的装饰词。下面从内容结构、播放体验、社区运营与品牌责任四个角度，把这件事说明白。</p>
+
+          <h3>内容结构：免费不等于随便，在线观看的片库要经得起细看</h3>
+          <p>花都影视目前的在线片库分为四条主线：城市影像、人物访谈、创作幕后与生活记录。城市影像以花都与周边水乡为取景核心，强调在地文化与真实的空间质感；人物访谈坚持长时间跟拍与口述实录，不剪辑情绪、不制造冲突；创作幕后是给新作者看的，讲的是分镜、收音、调色这些具体的活；生活记录最杂，从早餐铺到旧书店，从夜班工作到社区花园。四条线加起来构成了我们的内容生态，也决定了免费在线观看不是“资源堆砌”，而是有编辑判断的长期更新。</p>
+          <p>以《花都夜航》为例，这部纪录长片在院线短片单元放映过两个版本，最终上线的是 48 分钟的导演剪辑版。为了让免费观众也能看得舒服，我们重新做了 4K 修复与字幕轴对齐，并且在播放页附上了导演手记。这类工作不会让播放量立刻翻倍，但它决定了平台的品质底线。我们内部有个简单的判断标准：一支片子上线三年后，作者自己还愿意把它分享给朋友，那就值得放进首页。</p>
+
+          <h3>播放体验：高清、稳定、少打扰，是免费服务的底线</h3>
+          <p>免费在线观看最容易被忽视的部分是技术。花都影视采用自适应码率分发，弱网环境下自动降到 480P 保证不断流，网络恢复后在 3 秒内回到 1080P 或 4K；播放器默认关闭自动连播，避免观众在深夜被下一条片子的声音吵醒。我们也把“线观”这件事做得很克制：片头不加长贴片，暂停不弹窗，评论区默认收起。观众想看讨论的时候可以展开，不想看的时候它就是干净的。这些细节是长期迭代出来的，来自社区每月的体验反馈会。</p>
+          <p>另外，花都影视所有上线的原创内容都经过版权核验，作者需要提交授权说明与素材来源。对观众而言，这意味着在这里看到的影片是可追溯的；对作者而言，意味着作品不会被随意搬运。平台设有专门的投诉与下架通道，处理周期公开在帮助中心里。行业领先不是自己说的，是这些流程年复一年跑下来形成的口碑。</p>
+
+          <h3>社区运营：创作者、观众与编辑在同一张桌子上</h3>
+          <p>花都影视的社区不是评论区加点赞按钮那么简单。我们把创作者分成新人、成长与签约三个层级，每一级对应不同的资源：新人可以获得脚本诊断与器材借用，成长作者可以进入专题共创，签约作者参与年度企划与线下放映。观众这边，我们开放了投票、选题征集与试看反馈三个入口，“在地生长”专题的拍摄顺序就是由社区投票决定的。创作者与观众之间因此有了真实的往来，而不只是数据关系。</p>
+          <p>每月最后一个周六，花都影视会在合作的独立放映空间做一次小型看片会，作者到场，观众免费报名。看片会结束后会整理成文字与音频，作为下一期创作方法论的素材。这种线下与线上互相喂养的方式，让内容生态保持了活力。我们也因此认识了大量愿意长期投入的创作者，他们不为流量写作，而是为了一条街、一个人、一段记忆而拍。</p>
+
+          <div class="hd-article-note">平台立场：花都影视坚持原创、正版与高清三条底线，免费在线观看不等于降低标准，任何搬运、盗录与二次剪辑都将被拒绝上线。</div>
+
+          <h3>品牌责任：值得信赖，是一次次把小事做对</h3>
+          <p>很多人以为影视平台的竞争在片库规模，其实长期看是在信任。花都影视的信任来自几个很具体的地方：数据不注水，播放量与点赞数按真实去重计算；广告与内容分开标注，不接受与影片内容混淆的软性植入；对未成年观众默认开启青少年模式；对涉及个人隐私的纪录片，上线前必须取得被拍摄者书面同意。这些规则写在作者手册里，也写进编辑的日常审核清单。</p>
+          <p>我们也在做一件慢的事：把花都本地的影像档案保存下来。目前已经归档了 400 多小时的口述素材、200 多卷胶片扫描件与一批老照片，未来会以专题形式逐步开放。这是品牌故事的一部分，也是社会责任的一部分。影视平台的价值不只在今晚看什么，更在十年后还能不能找到这座城市的某一天是怎样度过的。花都影视希望成为那个能被找到的地方。</p>
+          <p>如果你正在寻找一个可以安静看完一支片子的地方，欢迎在花都影视在线观看；如果你是创作者，欢迎把作品投递给我们，无论长短，只要认真。我们相信品质来自持续的挑选与打磨，而口碑来自每一次不敷衍的播放。</p>
+        </div>
+
+        <aside>
+          <div class="hd-aside-card">
+            <h4>本页速读 <span>4 点</span></h4>
+            <ul class="hd-aside-list">
+              <li><b>四条内容主线</b>：城市影像、人物访谈、创作幕后、生活记录。</li>
+              <li><b>播放体验</b>：自适应码率、无自动连播、评论区默认收起。</li>
+              <li><b>社区机制</b>：三级作者体系、投票选题、每月看片会。</li>
+              <li><b>品牌底线</b>：原创、正版、高清，数据去重不注水。</li>
+            </ul>
+          </div>
+          <div class="hd-aside-card">
+            <h4>编辑手记 <span>2026.11</span></h4>
+            <p class="hd-quote">
+              我们不太相信“爆款方法论”。一支片子能被记住，往往是因为它在某个细节上没有偷懒，比如一段真实的呼吸声，或者一个没有剪掉的停顿。
+              <footer>—— 花都影视内容编辑组</footer>
+            </p>
+          </div>
+          <div class="hd-aside-card">
+            <h4>数据一览 <span>近 30 天</span></h4>
+            <ul class="hd-aside-list">
+              <li>新上线原创影片 <b>64 部</b></li>
+              <li>社区投稿量 <b>1,940 条</b></li>
+              <li>平均完播率 <b>71.5%</b></li>
+              <li>投诉处理平均时长 <b>18 小时</b></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ S5 创作者矩阵 ============ -->
+  <section class="hd-section" id="hd-creators" aria-labelledby="hd-creators-title">
+    <div class="hd-container">
+      <div class="hd-sec-head">
+        <span class="hd-sec-label">Creators / 创作者</span>
+        <h2 id="hd-creators-title">花都影视社区的六位常驻创作者</h2>
+        <p>他们来自不同背景，有记者、剪辑师、厨师与教师，共同点是愿意花时间把一件事拍完整。</p>
+      </div>
+      <div class="hd-authors">
+        <article class="hd-author">
+          <div class="hd-avatar hd-av-1">南</div>
+          <div class="hd-author-main">
+            <h3>南岸影像社 <span class="hd-author-role">签约作者</span></h3>
+            <div class="hd-author-field">擅长：城市影像 · 纪录长片</div>
+            <p>三人小组，长期沿花都河拍摄。习惯用固定机位与自然光，作品节奏慢但不空。代表作《花都夜航》获年度社区口碑榜第一，目前正在筹备第二部长片。</p>
+            <div class="hd-author-meta"><span>作品 <b>38</b></span><span>粉丝 <b>4.2 万</b></span></div>
+            <button class="hd-author-btn hd-author-open" type="button" data-author="南岸影像社">查看作者</button>
+          </div>
+        </article>
+        <article class="hd-author">
+          <div class="hd-avatar hd-av-2">秦</div>
+          <div class="hd-author-main">
+            <h3>秦屿 <span class="hd-author-role">签约作者</span></h3>
+            <div class="hd-author-field">擅长：人物访谈 · 口述实录</div>
+            <p>前纸媒记者，转做影像后仍保留采访笔记的习惯。擅长在长时间对话里找到那个愿意被讲出来的句子，作品多为 20 分钟以上的人物纪录。</p>
+            <div class="hd-author-meta"><span>作品 <b>52</b></span><span>粉丝 <b>5.6 万</b></span></div>
+            <button class="hd-author-btn hd-author-open" type="button" data-author="秦屿">查看作者</button>
+          </div>
+        </article>
+        <article class="hd-author">
+          <div class="hd-avatar hd-av-3">林</div>
+          <div class="hd-author-main">
+            <h3>林照 <span class="hd-author-role">成长作者</span></h3>
+            <div class="hd-author-field">擅长：日常记录 · 实用技巧</div>
+            <p>白天是产品经理，晚上拍片。偏爱用一部手机完成整支纪录短片，教程写得比片子还细，收藏量常年高于播放量，是新人作者最常翻看的参考。</p>
+            <div class="hd-author-meta"><span>作品 <b>27</b></span><span>粉丝 <b>2.8 万</b></span></div>
+            <button class="hd-author-btn hd-author-open" type="button" data-author="林照">查看作者</button>
+          </div>
+        </article>
+        <article class="hd-author">
+          <div class="hd-avatar hd-av-4">阿</div>
+          <div class="hd-author-main">
+            <h3>阿禾食记 <span class="hd-author-role">成长作者</span></h3>
+            <div class="hd-author-field">擅长：美食烹饪 · 在地文化</div>
+            <p>在花都老城区长大，拍食物也拍做食物的人。坚持不摆拍、不打光，凌晨四点跟着蒸汽走。系列《一条街的早晨》已更新到第七集。</p>
+            <div class="hd-author-meta"><span>作品 <b>41</b></span><span>粉丝 <b>3.9 万</b></span></div>
+            <button class="hd-author-btn hd-author-open" type="button" data-author="阿禾食记">查看作者</button>
+          </div>
+        </article>
+        <article class="hd-author">
+          <div class="hd-avatar hd-av-5">梁</div>
+          <div class="hd-author-main">
+            <h3>梁木工作间 <span class="hd-author-role">新人作者</span></h3>
+            <div class="hd-author-field">擅长：创作幕后 · 教程干货</div>
+            <p>影视后期出身，喜欢把复杂的流程拆成能照着做的步骤。每期教程都附可下载模板与工程文件，评论区常见“终于看懂了”的反馈。</p>
+            <div class="hd-author-meta"><span>作品 <b>19</b></span><span>粉丝 <b>1.4 万</b></span></div>
+            <button class="hd-author-btn hd-author-open" type="button" data-author="梁木工作间">查看作者</button>
+          </div>
+        </article>
+        <article class="hd-author">
+          <div class="hd-avatar hd-av-6">陈</div>
+          <div class="hd-author-main">
+            <h3>陈砚的镜头 <span class="hd-author-role">新人作者</span></h3>
+            <div class="hd-author-field">擅长：艺术美学 · 治愈影像</div>
+            <p>美术教师，业余拍短片。画面讲究留白与色彩关系，题材多为日常小事，一支《窗台上的第三盆绿植》被社区反复推荐，完播率超过九成。</p>
+            <div class="hd-author-meta"><span>作品 <b>14</b></span><span>粉丝 <b>9,720</b></span></div>
+            <button class="hd-author-btn hd-author-open" type="button" data-author="陈砚的镜头">查看作者</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ S6 评价 ============ -->
+  <section class="hd-section hd-section-alt" id="hd-reviews" aria-labelledby="hd-reviews-title">
+    <div class="hd-container">
+      <div class="hd-sec-head">
+        <span class="hd-sec-label">Community / 社区口碑</span>
+        <h2 id="hd-reviews-title">观众怎么说：花都影视的真实评价</h2>
+        <p>以下评价来自社区月度回收问卷与站内留言，按内容、体验、社区三个维度抽样展示。</p>
+      </div>
+      <div class="hd-reviews">
+        <div class="hd-rating-summary">
+          <div>
+            <div class="hd-rating-score">4.8</div>
+            <small>综合评分 · 2,417 份问卷</small>
+          </div>
+          <div class="hd-rating-bars">
+            <div class="hd-bar"><span>内容</span><div class="hd-bar-track"><i style="width:96%"></i></div><span>4.8</span></div>
+            <div class="hd-bar"><span>体验</span><div class="hd-bar-track"><i style="width:94%"></i></div><span>4.7</span></div>
+            <div class="hd-bar"><span>社区</span><div class="hd-bar-track"><i style="width:97%"></i></div><span>4.9</span></div>
+          </div>
+        </div>
+
+        <article class="hd-review">
+          <div class="hd-review-head">
+            <span class="hd-review-av hd-av-2">林</span>
+            <b>林间散步</b>
+            <span class="hd-review-stars">★★★★★</span>
+          </div>
+          <p>《花都夜航》我看了两遍。第一遍看城市，第二遍看人。桥下那段没有旁白，但比很多解说都清楚。</p>
+          <time>2026-11-19</time>
+        </article>
+        <article class="hd-review">
+          <div class="hd-review-head">
+            <span class="hd-review-av hd-av-4">周</span>
+            <b>周末不加班</b>
+            <span class="hd-review-stars">★★★★☆</span>
+          </div>
+          <p>画质确实稳，家里网络一般也没卡过。提个小建议：希望播放页的字幕字号能记住上次设置，每次都要调一下。</p>
+          <time>2026-11-16</time>
+        </article>
+        <article class="hd-review">
+          <div class="hd-review-head">
+            <span class="hd-review-av hd-av-1">沈</span>
+            <b>沈三白</b>
+            <span class="hd-review-stars">★★★★★</span>
+          </div>
+          <p>作为业余拍片的人，梁木工作间的教程帮了大忙。工程文件能直接下载这一点太实在了，比看十篇图文都有用。</p>
+          <time>2026-11-14</time>
+        </article>
+        <article class="hd-review">
+          <div class="hd-review-head">
+            <span class="hd-review-av hd-av-6">L</span>
+            <b>Lemon_1024</b>
+            <span class="hd-review-stars">★★★★☆</span>
+          </div>
+          <p>免费能看这么多原创内容挺意外的。片头没有长广告，暂停也不弹窗，这点很加分。就是希望分类页能再多几个筛选项。</p>
+          <time>2026-11-12</time>
+        </article>
+        <article class="hd-review hd-review-wide">
+          <div class="hd-review-head">
+            <span class="hd-review-av hd-av-5">黄</span>
+            <b>黄师傅的邻居</b>
+            <span class="hd-review-stars">★★★★★</span>
+          </div>
+          <p>秦屿那期老电影院的访谈，我父母从头看到尾。黄师傅是我们院里的人，说的很多事我小时候也见过。看完给我爸打了个电话，聊了半小时。这种片子别的地方不太会有，谢谢你们愿意花时间拍下来。</p>
+          <time>2026-11-10</time>
+        </article>
+        <article class="hd-review">
+          <div class="hd-review-head">
+            <span class="hd-review-av hd-av-3">A</span>
+            <b>Arcadia</b>
+            <span class="hd-review-stars">★★★★☆</span>
+          </div>
+          <p>看片会报名过一次，现场很小但很舒服。作者讲了自己剪掉的三场戏，比成片还有意思。</p>
+          <time>2026-11-08</time>
+        </article>
+        <article class="hd-review">
+          <div class="hd-review-head">
+            <span class="hd-review-av hd-av-1">小</span>
+            <b>小满</b>
+            <span class="hd-review-stars">★★★★★</span>
+          </div>
+          <p>投稿过一次，被编辑退回了，但附了三百多字的修改建议，还标了时间码。虽然没上线，但学到了东西。</p>
+          <time>2026-11-05</time>
+        </article>
+        <article class="hd-review">
+          <div class="hd-review-head">
+            <span class="hd-review-av hd-av-2">旧</span>
+            <b>旧胶片</b>
+            <span class="hd-review-stars">★★★★☆</span>
+          </div>
+          <p>喜欢《街角的声音》那支。收音很细腻，修表和磨剪刀的声音都保留了。希望以后多做这类在地的内容。</p>
+          <time>2026-11-02</time>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ S7 企业动态 + 合作伙伴 ============ -->
+  <section class="hd-section" id="hd-news" aria-labelledby="hd-news-title">
+    <div class="hd-container">
+      <div class="hd-sec-head">
+        <span class="hd-sec-label">Updates / 企业动态</span>
+        <h2 id="hd-news-title">花都影视官方发布与内容更新</h2>
+        <p>品牌资讯、社区活动与平台更新在此集中发布，所有公告均以官方发布为准。</p>
+      </div>
+      <div class="hd-triple">
+        <div class="hd-news">
+          <article class="hd-news-item">
+            <div class="hd-news-date"><b>22</b>11月</div>
+            <div>
+              <h3>《花都夜航》4K 修复版正式开放免费在线观看</h3>
+              <p>新增导演手记与摄影注释，支持字幕切换与画质自适应，移动端同步上线。</p>
+            </div>
+          </article>
+          <article class="hd-news-item">
+            <div class="hd-news-date"><b>18</b>11月</div>
+            <div>
+              <h3>花都短片挑战赛开放报名，主题为“我住的那条街”</h3>
+              <p>征集 3-10 分钟原创短片，评审由编辑与签约作者共同组成，12 月中旬公布入围名单。</p>
+            </div>
+          </article>
+          <article class="hd-news-item">
+            <div class="hd-news-date"><b>12</b>11月</div>
+            <div>
+              <h3>创作投稿页升级：支持批量上传、草稿保存与进度查询</h3>
+              <p>新版本已全量开放，作者可在个人页查看审核节点与编辑建议，历史稿件同步迁移。</p>
+            </div>
+          </article>
+          <article class="hd-news-item">
+            <div class="hd-news-date"><b>05</b>11月</div>
+            <div>
+              <h3>十月社区看片会回顾：三支短片与一场关于声音的讨论</h3>
+              <p>现场录音与文字整理已上线创作方法论专题，社区成员可免费下载音频。</p>
+            </div>
+          </article>
+        </div>
+        <div>
+          <div class="hd-partners">
+            <div class="hd-partner">
+              <span class="hd-partner-logo hd-av-2">光</span>
+              <div><b>光合放映空间</b><small>线下看片会合作场地</small></div>
+            </div>
+            <div class="hd-partner">
+              <span class="hd-partner-logo hd-av-4">声</span>
+              <div><b>声场录音棚</b><small>同期声与混音支持</small></div>
+            </div>
+            <div class="hd-partner">
+              <span class="hd-partner-logo hd-av-3">纸</span>
+              <div><b>纸间印社</b><small>影像手册与物料印刷</small></div>
+            </div>
+            <div class="hd-partner">
+              <span class="hd-partner-logo hd-av-6">木</span>
+              <div><b>木作工坊</b><small>器材柜与展陈合作</small></div>
+            </div>
+          </div>
+          <div class="hd-aside-card" style="margin-top:16px">
+            <h4>创作灵感速递 <span>本期</span></h4>
+            <ul class="hd-aside-list">
+              <li><b>标题建议</b>：把时间放进标题，如“十一点半的糖水铺”。</li>
+              <li><b>结构思路</b>：用三个空间打开一座城市，比按时间线更稳。</li>
+              <li><b>剪辑提示</b>：保留一次完整的沉默，观众会自己填空。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ S7 FAQ ============ -->
+  <section class="hd-section hd-section-alt" id="hd-faq" aria-labelledby="hd-faq-title">
+    <div class="hd-container">
+      <div class="hd-sec-head">
+        <span class="hd-sec-label">Help / 帮助中心</span>
+        <h2 id="hd-faq-title">关于花都影视在线观看的常见问题</h2>
+        <p>整理自社区高频提问，涉及播放、投稿、版权与账号，若仍有疑问可联系官方邮箱。</p>
+      </div>
+      <div class="hd-faq">
+        <details open>
+          <summary>花都影视的免费在线观看是否包含全部影片？</summary>
+          <p>目前站内约九成原创内容支持免费高清在线观看，少量与院线或版权方联合出品的作品会标注“限时免费”或“需授权观看”。所有标注在播放页头部，不设隐藏收费项。</p>
+        </details>
+        <details>
+          <summary>播放卡顿或画质自动降低，怎么处理？</summary>
+          <p>平台采用自适应码率，弱网时会自动降低清晰度以保持连续播放。可先在播放器右下角手动选择清晰度，若仍异常，建议检查网络或更换浏览器。问题持续可在帮助中心提交设备信息，我们会在 24 小时内回复。</p>
+        </details>
+        <details>
+          <summary>如何向花都影视投稿自己的影视作品？</summary>
+          <p>进入“作者投稿”入口，填写作品信息并上传成片与素材授权说明。审核分为形式审查与内容评审两步，通常在 7 个工作日内给出结果，未通过的稿件会附具体修改建议。</p>
+        </details>
+        <details>
+          <summary>投稿作品必须是未发布过的原创内容吗？</summary>
+          <p>不是。已在其他平台发布的作品仍可投稿，但需保证拥有完整版权并授权花都影视进行非独家的在线展示。我们拒绝任何未经授权的搬运、盗录与二次剪辑内容。</p>
+        </details>
+        <details>
+          <summary>发现侵权或不当内容，如何反馈？</summary>
+          <p>每个播放页底部均有“举报与反馈”入口，可提交链接、截图与说明。平台设有专门通道，处理周期公开在帮助中心，通常为 18 小时内初步核查，48 小时内给出处理结果。</p>
+        </details>
+        <details>
+          <summary>社区投票和专题选题是怎么决定的？</summary>
+          <p>每季度会开放一次选题征集，社区成员可提交提案并投票。得票靠前的方向进入编辑评估，结合制作可行性与版权情况确定最终专题。上一期“在地生长”的拍摄顺序即由投票结果产生。</p>
+        </details>
+        <details>
+          <summary>花都影视是否提供下载？</summary>
+          <p>部分作者授权的内容支持移动端离线缓存，用于个人观看，不提供二次分发。下载入口在播放页信息区，未授权内容不显示下载按钮。</p>
+        </details>
+        <details>
+          <summary>如何联系官方合作？</summary>
+          <p>品牌合作、场地共建与联合放映可发送邮件至官方合作邮箱，我们会在三个工作日内回复。请在邮件中说明合作类型、时间与预期，便于快速对接。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ S7 投稿 CTA ============ -->
+  <section class="hd-section" id="hd-submit" aria-labelledby="hd-submit-title">
+    <div class="hd-container">
+      <div class="hd-cta">
+        <div>
+          <h2 id="hd-submit-title">把你的片子交给花都影视</h2>
+          <p>无论是一支三分钟的日常记录，还是一部四十分钟的纪录长片，只要认真，我们都愿意看。投稿免费，审核透明，未通过也会给出具体建议。</p>
+        </div>
+        <div class="hd-cta-actions">
+          <button class="hd-btn hd-btn-primary" id="hd-submit-open" type="button">立即投稿</button>
+          <button class="hd-btn hd-btn-ghost" id="hd-report-open" type="button">举报与反馈</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ S8 页脚 ============ -->
+<footer class="hd-footer">
+  <div class="hd-container">
+    <div class="hd-footer-grid">
+      <div class="hd-footer-brand">
+        <b>
+          <span class="hd-brand-mark" style="width:32px;height:32px;border-radius:9px">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:17px;height:17px"><path d="M9 6.5L18 12L9 17.5V6.5Z" fill="#1a0c08"/></svg>
+          </span>
+          花都影视
+        </b>
+        <p>花都影视官方网站，专注原创影视内容的在线观看平台。我们坚持原创、正版、高清，为观众与创作者搭建值得信赖的内容社区，持续运营，长期陪伴。</p>
+      </div>
+      <div class="hd-footer-col">
+        <h4>内容</h4>
+        <a href="#hd-focus">焦点内容</a>
+        <a href="#hd-topics">专题企划</a>
+        <a href="#hd-analysis">关键词解析</a>
+        <a href="#hd-creators">创作者名录</a>
+      </div>
+      <div class="hd-footer-col">
+        <h4>社区</h4>
+        <a href="#hd-reviews">社区口碑</a>
+        <a href="#hd-news">企业动态</a>
+        <a href="#hd-faq">帮助中心</a>
+        <a href="#hd-submit">作者投稿</a>
+      </div>
+      <div class="hd-footer-col">
+        <h4>联系与规范</h4>
+        <a href="#hd-submit">品牌合作</a>
+        <span>合作邮箱：partner@huadufilm.example</span>
+        <span>内容授权：license@huadufilm.example</span>
+        <span>投诉处理：48 小时内响应</span>
+      </div>
+    </div>
+    <div class="hd-footer-bottom">
+      <span>© 2019–2026 花都影视官方网站 · 版权所有 · 持续运营中</span>
+      <span>花都影视备案号：粤B2-2026-XXXX · 网络视听服务备案公示可查</span>
+      <span>原创 · 正版 · 高清 · 用户至上</span>
+    </div>
+  </div>
+</footer>
+
+<button class="hd-to-top" id="hd-to-top" type="button" aria-label="回到顶部">↑</button>
+<div class="hd-toast" id="hd-toast" role="status" aria-live="polite"></div>
+
+<!-- 模态：分享 -->
+<div class="hd-modal" id="hd-share-modal" role="dialog" aria-modal="true" aria-labelledby="hd-share-title">
+  <div class="hd-modal-card">
+    <button class="hd-modal-close" type="button" data-close="hd-share-modal" aria-label="关闭">×</button>
+    <h3 id="hd-share-title">分享花都影视</h3>
+    <p>把正在看的好片告诉朋友，或复制页面链接收藏备用。</p>
+    <div class="hd-share-grid">
+      <button class="hd-share-item hd-copy-link" type="button">复制链接</button>
+      <button class="hd-share-item" type="button" data-share="微信">微信</button>
+      <button class="hd-share-item" type="button" data-share="微博">微博</button>
+      <button class="hd-share-item" type="button" data-share="QQ">QQ</button>
+    </div>
+  </div>
+</div>
+
+<!-- 模态：作者 -->
+<div class="hd-modal" id="hd-author-modal" role="dialog" aria-modal="true" aria-labelledby="hd-author-title">
+  <div class="hd-modal-card">
+    <button class="hd-modal-close" type="button" data-close="hd-author-modal" aria-label="关闭">×</button>
+    <h3 id="hd-author-title">作者信息</h3>
+    <p id="hd-author-body">正在加载作者信息。</p>
+  </div>
+</div>
+
+<!-- 模态：投稿 -->
+<div class="hd-modal" id="hd-submit-modal" role="dialog" aria-modal="true" aria-labelledby="hd-submit-modal-title">
+  <div class="hd-modal-card">
+    <button class="hd-modal-close" type="button" data-close="hd-submit-modal" aria-label="关闭">×</button>
+    <h3 id="hd-submit-modal-title">作者投稿</h3>
+    <p style="margin-bottom:16px">填写基本信息，编辑会在 7 个工作日内与你联系。请确保作品为原创且拥有完整授权。</p>
+    <form id="hd-submit-form">
+      <div class="hd-field">
+        <label for="hd-f-name">作者昵称</label>
+        <input id="hd-f-name" type="text" placeholder="例如：南岸影像社" required>
+      </div>
+      <div class="hd-field">
+        <label for="hd-f-title">作品名称</label>
+        <input id="hd-f-title" type="text" placeholder="例如：花都夜航" required>
+      </div>
+      <div class="hd-field">
+        <label for="hd-f-desc">作品简介</label>
+        <textarea id="hd-f-desc" rows="3" placeholder="题材、时长与拍摄缘起"></textarea>
+      </div>
+      <button class="hd-btn hd-btn-primary" type="submit" style="width:100%;justify-content:center">提交投稿</button>
+    </form>
+  </div>
+</div>
+
+<!-- 模态：举报 -->
+<div class="hd-modal" id="hd-report-modal" role="dialog" aria-modal="true" aria-labelledby="hd-report-title">
+  <div class="hd-modal-card">
+    <button class="hd-modal-close" type="button" data-close="hd-report-modal" aria-label="关闭">×</button>
+    <h3 id="hd-report-title">举报与反馈</h3>
+    <p style="margin-bottom:16px">我们重视每一条反馈，侵权与不当内容通常在 18 小时内完成初步核查。</p>
+    <form id="hd-report-form">
+      <div class="hd-field">
+        <label for="hd-r-type">问题类型</label>
+        <input id="hd-r-type" type="text" placeholder="侵权 / 画质 / 播放异常 / 其他" required>
+      </div>
+      <div class="hd-field">
+        <label for="hd-r-desc">问题描述</label>
+        <textarea id="hd-r-desc" rows="3" placeholder="请描述具体情况，便于我们快速定位"></textarea>
+      </div>
+      <button class="hd-btn hd-btn-primary" type="submit" style="width:100%;justify-content:center">提交反馈</button>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var toastEl = document.getElementById('hd-toast');
+  var toastTimer = null;
+  function showToast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2200);
+  }
+
+  /* ---- 移动端导航 ---- */
+  var burger = document.getElementById('hd-burger');
+  var mobileNav = document.getElementById('hd-mobile-nav');
+  if(burger && mobileNav){
+    burger.addEventListener('click', function(){
+      var open = mobileNav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.textContent = open ? '×' : '☰';
+    });
+    mobileNav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        mobileNav.classList.remove('open');
+        burger.setAttribute('aria-expanded','false');
+        burger.textContent = '☰';
+      });
+    });
+  }
+
+  /* ---- 搜索反馈 ---- */
+  var searchInput = document.getElementById('hd-search-input');
+  var searchBtn = document.getElementById('hd-search-btn');
+  var searchTip = document.getElementById('hd-search-tip');
+  var searchTargets = [
+    { kw:'花都夜航', tip:'匹配到 3 条内容：花都夜航 4K 修复版、夜航导演手记、花都桥下' },
+    { kw:'夜', tip:'匹配到 5 条内容：花都夜航、夜班兽医、十一点半的糖水铺、末班缆车、夜航导演手记' },
+    { kw:'访谈', tip:'匹配到 4 条内容：最后一位胶片放映员、老影院口述史、秦屿访谈手记、社区看片会回顾' },
+    { kw:'创作者', tip:'匹配到 6 位创作者：南岸影像社、秦屿、林照、阿禾食记、梁木工作间、陈砚的镜头' },
+    { kw:'免费', tip:'站内九成原创内容支持免费高清在线观看，可按画质与时长筛选' },
+    { kw:'教程', tip:'匹配到 4 条内容：创作方法论专题、三幕结构、同期声录制、调色流程演示' }
+  ];
+  function doSearch(){
+    var q = (searchInput && searchInput.value || '').trim();
+    if(!searchTip) return;
+    if(!q){
+      searchTip.textContent = '请输入关键词，例如“花都夜航”“访谈”“教程”';
+      searchTip.classList.add('show');
+      return;
+    }
+    var hit = null;
+    for(var i=0;i<searchTargets.length;i++){
+      if(q.indexOf(searchTargets[i].kw) !== -1 || searchTargets[i].kw.indexOf(q) !== -1){
+        hit = searchTargets[i]; break;
+      }
+    }
+    searchTip.textContent = hit ? hit.tip : '未找到与“' + q + '”直接匹配的内容，试试“花都夜航”“访谈”“免费”';
+    searchTip.classList.add('show');
+  }
+  if(searchBtn) searchBtn.addEventListener('click', doSearch);
+  if(searchInput){
+    searchInput.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+    });
+  }
+
+  /* ---- 点赞 ---- */
+  document.querySelectorAll('.hd-like-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var span = btn.querySelector('span');
+      var base = parseInt(btn.getAttribute('data-count') || '0', 10);
+      var liked = btn.classList.toggle('liked');
+      var val = liked ? base + 1 : base;
+      if(span){
+        span.textContent = val >= 10000 ? (val/10000).toFixed(1).replace(/\.0$/,'') + ' 万' : val.toLocaleString('en-US');
+      }
+      showToast(liked ? '已点赞，感谢支持' : '已取消点赞');
+    });
+  });
+
+  /* ---- 收藏 ---- */
+  document.querySelectorAll('.hd-save-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var saved = btn.classList.toggle('saved');
+      btn.textContent = saved ? '★ 已收藏' : '☆ 收藏';
+      showToast(saved ? '已加入收藏，可在个人页查看' : '已取消收藏');
+    });
+  });
+
+  /* ---- 弹窗通用 ---- */
+  function openModal(id){
+    var m = document.getElementById(id);
+    if(m) m.classList.add('show');
+  }
+  function closeModal(id){
+    var m = document.getElementById(id);
+    if(m) m.classList.remove('show');
+  }
+  document.querySelectorAll('[data-close]').forEach(function(btn){
+    btn.addEventListener('click', function(){ closeModal(btn.getAttribute('data-close')); });
+  });
+  document.querySelectorAll('.hd-modal').forEach(function(m){
+    m.addEventListener('click', function(e){
+      if(e.target === m) m.classList.remove('show');
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.hd-modal.show').forEach(function(m){ m.classList.remove('show'); });
+    }
+  });
+
+  /* ---- 分享 ---- */
+  var shareOpen = document.getElementById('hd-share-open');
+  if(shareOpen) shareOpen.addEventListener('click', function(){ openModal('hd-share-modal'); });
+  var copyBtn = document.querySelector('.hd-copy-link');
+  if(copyBtn){
+    copyBtn.addEventListener('click', function(){
+      var link = window.location.href;
+      function done(){
+        showToast('链接已复制，可以分享给朋友了');
+        copyBtn.textContent = '已复制';
+        setTimeout(function(){ copyBtn.textContent = '复制链接'; }, 1800);
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(link).then(done).catch(function(){ showToast('复制失败，请手动分享'); });
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = link;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); done(); } catch(err){ showToast('复制失败，请手动分享'); }
+        document.body.removeChild(ta);
+      }
+    });
+  }
+  document.querySelectorAll('[data-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      showToast('已生成' + btn.getAttribute('data-share') + '分享卡片');
+    });
+  });
+
+  /* ---- 作者弹窗 ---- */
+  var authorData = {
+    '南岸影像社': '三人影像小组，签约作者，长期沿花都河拍摄城市影像。习惯固定机位与自然光，代表作《花都夜航》获年度社区口碑榜第一。当前作品 38 部，粉丝 4.2 万，正在筹备第二部长片。',
+    '秦屿': '前纸媒记者，签约作者，专注人物访谈与口述实录。作品多为 20 分钟以上人物纪录，代表作《最后一位胶片放映员》。当前作品 52 部，粉丝 5.6 万。',
+    '林照': '成长作者，白天做产品经理，晚上拍片。偏爱用一部手机完成整支纪录短片，教程细致实用。代表作《花都桥下》《器材不重要》。当前作品 27 部，粉丝 2.8 万。',
+    '阿禾食记': '成长作者，在花都老城区长大，拍食物也拍做食物的人。坚持不摆拍、不打光，系列《一条街的早晨》已更新至第七集。当前作品 41 部，粉丝 3.9 万。',
+    '梁木工作间': '新人作者，影视后期出身，擅长把复杂流程拆成可执行步骤，每期教程附可下载模板与工程文件。当前作品 19 部，粉丝 1.4 万。',
+    '陈砚的镜头': '新人作者，美术教师，业余拍短片。画面讲究留白与色彩关系，题材多为日常小事。代表作《窗台上的第三盆绿植》完播率超过九成。当前作品 14 部，粉丝 9,720。'
+  };
+  document.querySelectorAll('.hd-author-open').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var name = btn.getAttribute('data-author');
+      var body = document.getElementById('hd-author-body');
+      var title = document.getElementById('hd-author-title');
+      if(body) body.textContent = authorData[name] || '暂无该作者的详细资料。';
+      if(title) title.textContent = name + ' · 创作者档案';
+      openModal('hd-author-modal');
+    });
+  });
+
+  /* ---- 投稿 / 举报表单 ---- */
+  var submitOpen = document.getElementById('hd-submit-open');
+  if(submitOpen) submitOpen.addEventListener('click', function(){ openModal('hd-submit-modal'); });
+  var reportOpen = document.getElementById('hd-report-open');
+  if(reportOpen) reportOpen.addEventListener('click', function(){ openModal('hd-report-modal'); });
+
+  var submitForm = document.getElementById('hd-submit-form');
+  if(submitForm){
+    submitForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      closeModal('hd-submit-modal');
+      submitForm.reset();
+      showToast('投稿已提交，编辑将在 7 个工作日内与你联系');
+    });
+  }
+  var reportForm = document.getElementById('hd-report-form');
+  if(reportForm){
+    reportForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      closeModal('hd-report-modal');
+      reportForm.reset();
+      showToast('反馈已收到，我们会在 18 小时内初步核查');
+    });
+  }
+
+  /* ---- 首屏播放按钮 ---- */
+  var heroPlay = document.getElementById('hd-hero-play');
+  if(heroPlay){
+    heroPlay.addEventListener('click', function(){
+      showToast('《花都夜航》正在为你准备高清播放');
+    });
+  }
+
+  /* ---- 回到顶部 ---- */
+  var toTop = document.getElementById('hd-to-top');
+  window.addEventListener('scroll', function(){
+    if(!toTop) return;
+    if(window.scrollY > 520){ toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+  }, { passive:true });
+  if(toTop){
+    toTop.addEventListener('click', function(){
+      window.scrollTo({ top:0, behavior:'smooth' });
+    });
+  }
+})();
+</script>
+</body>
+  </html>
